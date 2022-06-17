@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statki - Three.js</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        label {
+            left: 30px;
+            top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+        }
+    </style>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./../../libs/tween.umd.js"></script>
+    <script src="./../../libs/three.js"></script>
+    <script src="Main.js" type="module"></script>
+</head>
+
+<body>
+    <div id="ui">
+        <div class="status">
+            <div id="status" class="status-item"></div>
+            <div id="timer" class="status-item"></div>
+            <div id="currentturn" class="status-item"></div>
+            <div id="proceed" class="status-item"
+                style="right: 0px; position: absolute; top: 5px; height: 90%; z-index: 1000">
+                <button id="confirm" class="btn"
+                    style="height: 90%; font-size: 18px;line-height: 90%; z-index: 2137;">Confirm placement</button>
+            </div>
+        </div>
+
+        <div id="login-holder" class="holder">
+            <div id="userLogin" class="login">
+                <h2>Login</h2>
+                <input type="text" class="login-input" id="login-input" placeholder="username">
+                <div id="login-errors"></div>
+                <button id="login-play-btn" class="btn">Play</button>
+                <button id="login-reset-btn" class="btn">Reset</button>
+            </div>
+        </div>
+
+        <div id="customization" class="holder display">
+            <p style="top:0;position: inherit;">Settings</p>
+            <!--add more lines if you want to change skins-->
+            <div class="vertical-settings">
+                <div class="horizontal-settings">
+                    <span>Your color:</span>
+                    <input style="float: right; width: 50%" type="color" id="user-color">
+                </div>
+                <div class="horizontal-settings">
+                    <span>random color</span>
+                    <button id="random-color" class="btn" style="float: right; width: 50%">ඞ</button>
+                </div>
+                <div class="horizontal-settings">
+                    <span>explosions particle amount</span>
+                    <select name="explosion" style="float: right; width: 50%" id="explosion-amount">
+                        <option value="50">low</option>
+                        <option value="100">medium</option>
+                        <option value="150">high</option>
+                    </select>
+                </div>
+                <div class="horizontal-settings">
+                    <span>water sparkiling amount</span>
+                    <select style="float: right; width: 50%" id="sparkling-select" name="sparkilnig">
+                        <option value="1500">low</option>
+                        <option value="1000">medium</option>
+                        <option value="500">high</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="leaderboard" class="holder display">
+            <p style="top:0;position: inherit;">Leaderboard</p>
+            <table id="players-table" style="font-size: 16px;width: 100%;top: 65px; position: absolute;">
+                <tr>
+                    <th>Nr.</th>
+                    <th>Nickname</th>
+                    <th>W/L</th>
+                    <th>Accuracy</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="holder">
+            <div id="display" class="display">
+
+            </div>
+        </div>
+
+        <!-- <div class="debug" id="debug">
+
+        </div> -->
+    </div>
+
+    <div id="root"></div>
+</body>
+
+
+</html>
